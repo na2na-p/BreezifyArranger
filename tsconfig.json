@@ -1,5 +1,22 @@
 {
-	"extends": "@tsconfig/strictest/tsconfig.json",
+  "extends": "@tsconfig/strictest/tsconfig.json",
+  "compilerOptions": {
+    "types": [
+      "node",
+      "vitest/importMeta",
+      "vitest/globals",
+      "vite-plugin-svgr/client"
+    ],
+		"baseUrl": ".",
+		"paths": {
+			"@/*": [
+				"src/*"
+			],
+			"@root/*": [
+				"*"
+			]
+		}
+	},
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },

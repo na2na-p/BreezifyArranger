@@ -1,3 +1,13 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import { AuthMain } from '@/pages/auth/top';
+
 export const App = () => {
-  return <h1>This is BreezifyArranger.</h1>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<AuthMain />} />
+      </Routes>
+    </BrowserRouter>
+  );
 };
