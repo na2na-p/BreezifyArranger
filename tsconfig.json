@@ -5,7 +5,6 @@
       "node",
       "vitest/importMeta",
       "vitest/globals",
-      "vite-plugin-svgr/client"
     ],
 		"baseUrl": ".",
 		"paths": {

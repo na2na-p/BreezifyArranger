@@ -97,6 +97,7 @@ const typescriptEslintCustomRules = {
       ],
     },
   ],
+  '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
 };
 
 const plugins = {

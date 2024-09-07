@@ -1,1 +1,1 @@
-export { AuthMain } from './internal/authMain.component';
+export { AuthMain } from './internal/AuthMain.component.tsx';
