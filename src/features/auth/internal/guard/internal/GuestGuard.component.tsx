@@ -15,7 +15,7 @@ const GuestGuard = () => {
   return (
     <GuardBase
       guardPredicate={isGuest}
-      onRejected={() => navigate(routes.listPlaylist.getPath())}
+      onRejected={() => navigate(routes.listPlaylist.path())}
     />
   );
 };

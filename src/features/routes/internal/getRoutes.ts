@@ -1,24 +1,22 @@
+export type Path = `/${string}/`;
 type Routes = Record<
   string,
-  {
-    key: string;
-    getPath: (...args: ReadonlyArray<string>) => string;
-  }
+  { path: Path | ((args: Record<string, string>) => Path) }
 >;
 
 export const getRoutes = () => {
   return {
     auth: {
-      key: 'auth',
-      getPath: () => '/auth',
+      path: () => '/auth/',
     },
     spotifyOAuth2Callback: {
-      key: 'spotifyOAuth2Callback',
-      getPath: () => '/auth/spotify-oauth2-callback',
+      path: () => '/auth/spotify-oauth2-callback/',
     },
     listPlaylist: {
-      key: 'listPlaylist',
-      getPath: () => '/playlists',
+      path: () => '/playlists/',
+    },
+    playlist: {
+      path: ({ id = ':id' }) => `/playlists/${id}/`,
     },
   } as const satisfies Routes;
 };

@@ -18,7 +18,7 @@ export const useAuthMain = () => {
   const config = getConfig();
   const routes = getRoutes();
   const location = useLocation();
-  const redirectUri = `${window.location.origin}${routes.spotifyOAuth2Callback.getPath()}`;
+  const redirectUri = `${window.location.origin}${routes.spotifyOAuth2Callback.path()}`;
   const codeVerifierStore = getCodeVerifierStore();
   const oauth2StateStore = getOauth2StateStore();
 

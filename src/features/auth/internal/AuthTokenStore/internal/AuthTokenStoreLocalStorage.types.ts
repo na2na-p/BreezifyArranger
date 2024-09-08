@@ -1,7 +1,10 @@
+import type { AccessToken } from '@spotify/web-api-ts-sdk';
+
 export type OAuth2Token = {
-  accessToken: string;
+  // NOTE: Guardで使う用
   expiresAt: number;
-};
+  refresh_token?: string;
+} & Omit<AccessToken, 'refresh_token'>;
 
 export type EventType = 'change';
 export type Listener = (token: OAuth2Token | null) => void | Promise<void>;

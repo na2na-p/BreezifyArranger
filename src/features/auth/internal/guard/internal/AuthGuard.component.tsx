@@ -17,7 +17,7 @@ const AuthGuard = () => {
     <GuardBase
       guardPredicate={isAuthorized}
       onRejected={() =>
-        navigate(routes.auth.getPath(), { state: { from: currentPath } })
+        navigate(routes.auth.path(), { state: { from: currentPath } })
       }
     />
   );

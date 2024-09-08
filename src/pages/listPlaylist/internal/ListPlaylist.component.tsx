@@ -1,4 +1,7 @@
 export const ListPlaylist = () => {
-  console.log('ListPlaylist');
-  return <h1>ListPlaylist</h1>;
+  return (
+    <>
+      <h1>ListPlaylist</h1>
+    </>
+  );
 };

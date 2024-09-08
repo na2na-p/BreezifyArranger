@@ -41,6 +41,7 @@ const typescriptEslintCustomRules = {
   '@typescript-eslint/explicit-function-return-type': 'off',
   '@typescript-eslint/explicit-module-boundary-types': 'off',
   '@typescript-eslint/no-empty-object-type': 'error',
+	'@typescript-eslint/no-empty-object-type': 'off',
   '@typescript-eslint/array-type': [
     'error',
     {

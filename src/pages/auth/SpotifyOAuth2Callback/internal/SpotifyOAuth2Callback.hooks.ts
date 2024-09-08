@@ -35,7 +35,7 @@ export const useSpotifyOAuth2Callback = () => {
   useEffect(() => {
     const state = oauth2StateStore.get();
     if (state === null) {
-      navigate(routes.auth.getPath(), {
+      navigate(routes.auth.path(), {
         state: { error: 'state is not set' },
       });
       return onFailureCleanup;
@@ -46,14 +46,14 @@ export const useSpotifyOAuth2Callback = () => {
     ) as SpotifyOAuth2CallbackParams;
 
     if (state !== paramsObject.state) {
-      navigate(routes.auth.getPath(), {
+      navigate(routes.auth.path(), {
         state: { error: 'state is invalid' },
       });
       return onFailureCleanup;
     }
 
     if ('error' in paramsObject) {
-      navigate(routes.auth.getPath(), {
+      navigate(routes.auth.path(), {
         state: { error: paramsObject.error },
       });
       return () => {
@@ -66,7 +66,7 @@ export const useSpotifyOAuth2Callback = () => {
     if ('code' in paramsObject) {
       const codeVerifier = codeVerifierStore.get();
       if (isNil(codeVerifier)) {
-        navigate(routes.auth.getPath(), {
+        navigate(routes.auth.path(), {
           state: { error: 'code_verifier is not set' },
         });
         return () => {
@@ -82,7 +82,7 @@ export const useSpotifyOAuth2Callback = () => {
         },
         body: new URLSearchParams({
           client_id: config.spotifyOAuth2ClientId,
-          redirect_uri: `${window.location.origin}${routes.spotifyOAuth2Callback.getPath()}`,
+          redirect_uri: `${window.location.origin}${routes.spotifyOAuth2Callback.path()}`,
           grant_type: 'authorization_code',
           code: paramsObject.code,
           code_verifier: codeVerifier,
@@ -93,7 +93,7 @@ export const useSpotifyOAuth2Callback = () => {
         const body = await fetch(spotifyEndpoints.tokenEndpoint, payload);
         const json = (await body.json()) as SpotifyTokenEndpointResponse;
         if ('error' in json) {
-          navigate(routes.auth.getPath(), {
+          navigate(routes.auth.path(), {
             state: { error: json.error_description },
           });
           oauth2StateStore.flush();
@@ -104,7 +104,7 @@ export const useSpotifyOAuth2Callback = () => {
 
         const expiresIn = json.expires_in;
         if (expiresIn === undefined) {
-          navigate(routes.auth.getPath(), {
+          navigate(routes.auth.path(), {
             state: { error: 'expires_in is not set' },
           });
           oauth2StateStore.flush();
@@ -115,7 +115,7 @@ export const useSpotifyOAuth2Callback = () => {
 
         const accessToken = json.access_token;
         if (accessToken === undefined) {
-          navigate(routes.auth.getPath(), {
+          navigate(routes.auth.path(), {
             state: { error: 'access_token is not set' },
           });
           oauth2StateStore.flush();
@@ -126,11 +126,11 @@ export const useSpotifyOAuth2Callback = () => {
 
         const expiresAt = Date.now() + expiresIn * 1000;
         authTokenStore.set({
-          accessToken: json.access_token,
+          ...json,
           expiresAt,
         });
 
-        navigate(routes.listPlaylist.getPath());
+        navigate(routes.listPlaylist.path());
         return;
       })();
       return () => {
