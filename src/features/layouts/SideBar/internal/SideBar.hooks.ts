@@ -24,7 +24,7 @@ export const useSideBar = () => {
   useEffect(() => {
     (async () => {
       const playlists = await spotifyClient.currentUser.playlists.playlists();
-      setUserPlaylists(playlists.items);
+      setUserPlaylists(playlists.items.filter((item) => item !== null));
     })();
   }, [spotifyClient.currentUser.playlists]);
   return { userPlaylists, selectedPlaylist, onPlaylistClick } as const;
