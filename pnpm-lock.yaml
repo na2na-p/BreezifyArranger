@@ -9,92 +9,92 @@ importers:
   .:
     dependencies:
       '@emotion/react':
-        specifier: ^11.13.5
+        specifier: 11.13.5
         version: 11.13.5(@types/react@18.3.12)(react@18.3.1)
       '@emotion/styled':
-        specifier: ^11.13.5
+        specifier: 11.13.5
         version: 11.13.5(@emotion/react@11.13.5(@types/react@18.3.12)(react@18.3.1))(@types/react@18.3.12)(react@18.3.1)
       '@mui/icons-material':
-        specifier: ^6.1.9
+        specifier: 6.1.9
         version: 6.1.9(@mui/material@6.1.9(@emotion/react@11.13.5(@types/react@18.3.12)(react@18.3.1))(@emotion/styled@11.13.5(@emotion/react@11.13.5(@types/react@18.3.12)(react@18.3.1))(@types/react@18.3.12)(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@types/react@18.3.12)(react@18.3.1)
       '@mui/material':
-        specifier: ^6.1.9
+        specifier: 6.1.9
         version: 6.1.9(@emotion/react@11.13.5(@types/react@18.3.12)(react@18.3.1))(@emotion/styled@11.13.5(@emotion/react@11.13.5(@types/react@18.3.12)(react@18.3.1))(@types/react@18.3.12)(react@18.3.1))(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@spotify/web-api-ts-sdk':
-        specifier: ^1.2.0
+        specifier: 1.2.0
         version: 1.2.0
       es-toolkit:
-        specifier: ^1.27.0
+        specifier: 1.27.0
         version: 1.27.0
       react:
-        specifier: ^18.3.1
+        specifier: 18.3.1
         version: 18.3.1
       react-dom:
-        specifier: ^18.3.1
+        specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
       react-router-dom:
-        specifier: ^6.28.0
+        specifier: 6.28.0
         version: 6.28.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:
       '@eslint/js':
-        specifier: ^9.16.0
+        specifier: 9.16.0
         version: 9.16.0
       '@testing-library/jest-dom':
-        specifier: ^6.6.3
+        specifier: 6.6.3
         version: 6.6.3
       '@testing-library/react':
-        specifier: ^16.0.1
+        specifier: 16.0.1
         version: 16.0.1(@testing-library/dom@10.4.0)(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@testing-library/user-event':
-        specifier: ^14.5.2
+        specifier: 14.5.2
         version: 14.5.2(@testing-library/dom@10.4.0)
       '@tsconfig/strictest':
-        specifier: ^2.0.5
+        specifier: 2.0.5
         version: 2.0.5
       '@types/node':
-        specifier: ^22.10.1
+        specifier: 22.10.1
         version: 22.10.1
       '@types/react':
-        specifier: ^18.3.12
+        specifier: 18.3.12
         version: 18.3.12
       '@types/react-dom':
-        specifier: ^18.3.1
+        specifier: 18.3.1
         version: 18.3.1
       '@vitejs/plugin-react-swc':
-        specifier: ^3.7.2
+        specifier: 3.7.2
         version: 3.7.2(vite@5.4.11(@types/node@22.10.1))
       eslint:
-        specifier: ^9.16.0
+        specifier: 9.16.0
         version: 9.16.0
       eslint-plugin-import:
-        specifier: ^2.31.0
+        specifier: 2.31.0
         version: 2.31.0(@typescript-eslint/parser@8.16.0(eslint@9.16.0)(typescript@5.7.2))(eslint@9.16.0)
       eslint-plugin-react-hooks:
         specifier: 5.1.0-rc-fb9a90fa48-20240614
         version: 5.1.0-rc-fb9a90fa48-20240614(eslint@9.16.0)
       eslint-plugin-react-refresh:
-        specifier: ^0.4.14
+        specifier: 0.4.14
         version: 0.4.14(eslint@9.16.0)
       globals:
-        specifier: ^15.12.0
+        specifier: 15.12.0
         version: 15.12.0
       jsdom:
-        specifier: ^25.0.1
+        specifier: 25.0.1
         version: 25.0.1
       prettier:
-        specifier: ^3.4.1
+        specifier: 3.4.1
         version: 3.4.1
       typescript:
-        specifier: ^5.7.2
+        specifier: 5.7.2
         version: 5.7.2
       typescript-eslint:
-        specifier: ^8.16.0
+        specifier: 8.16.0
         version: 8.16.0(eslint@9.16.0)(typescript@5.7.2)
       vite:
-        specifier: ^5.4.11
+        specifier: 5.4.11
         version: 5.4.11(@types/node@22.10.1)
       vitest:
-        specifier: ^2.1.6
+        specifier: 2.1.6
         version: 2.1.6(@types/node@22.10.1)(jsdom@25.0.1)
 
 packages:
