@@ -7,6 +7,7 @@ import { createContext, useState } from 'react';
 import { getAuthTokenStore } from '@/features/auth';
 import { getConfig } from '@/features/config';
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const SpotifyClientContext = createContext<SpotifyApi>({} as SpotifyApi);
 
 export const SpotifyClientContextProvider = ({
