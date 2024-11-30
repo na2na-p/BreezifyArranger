@@ -31,7 +31,6 @@ export const usePlaylist = () => {
             limit,
             offset
           );
-        console.log(playlistItemsResponse);
         hasNext = playlistItemsResponse.next !== null;
         offset += limit;
         items.push(...playlistItemsResponse.items);
