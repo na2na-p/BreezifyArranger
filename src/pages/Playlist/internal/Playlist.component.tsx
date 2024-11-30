@@ -2,7 +2,6 @@ import { usePlaylist } from './Playlist.hooks';
 
 export const Playlist = () => {
   const { playlistDetail } = usePlaylist();
-  console.log('playlistDetail', playlistDetail);
   return (
     <>
       <h1>Playlist</h1>
