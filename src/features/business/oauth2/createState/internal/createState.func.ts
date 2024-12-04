@@ -1,12 +1,8 @@
 function generateRandomState(length: number): string {
   const charset =
     'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  let state = '';
-  for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * charset.length);
-    state += charset.charAt(randomIndex);
-  }
-  return state;
+	const values = crypto.getRandomValues(new Uint8Array(length));
+	return values.reduce((acc, x) => acc + charset[x % charset.length], '');
 }
 
 export const createState = () => generateRandomState(32);
