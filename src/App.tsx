@@ -6,6 +6,7 @@ import { AuthorizedLayout } from '@/features/layouts/AuthorizedLayout';
 import { getRoutes } from '@/features/routes';
 import { Playlist } from '@/pages/Playlist';
 import { SpotifyOAuth2Callback } from '@/pages/auth/SpotifyOAuth2Callback';
+import { SpotifyOAuth2InvalidClientCallback } from '@/pages/auth/SpotifyOAuth2InvalidClientCallback';
 import { AuthMain } from '@/pages/auth/top';
 import { ListPlaylist } from '@/pages/listPlaylist';
 
@@ -28,6 +29,10 @@ export const App = () => {
           <Route
             path={routes.spotifyOAuth2Callback.path()}
             element={<SpotifyOAuth2Callback />}
+          />
+          <Route
+            path={routes.spotifyOAuth2InvalidClientCallback.path()}
+            element={<SpotifyOAuth2InvalidClientCallback />}
           />
         </Route>
       </Routes>
