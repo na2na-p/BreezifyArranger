@@ -1,4 +1,6 @@
-import { AppBar, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Toolbar, Typography } from '@mui/material';
+
+import { LogoutButton } from '@/features/auth';
 
 export const TopBar = () => {
   return (
@@ -7,6 +9,8 @@ export const TopBar = () => {
         <Typography variant="h6" noWrap component="div">
           BreezifyArranger
         </Typography>
+        <Box sx={{ flexGrow: 1 }} />
+        <LogoutButton />
       </Toolbar>
     </AppBar>
   );
