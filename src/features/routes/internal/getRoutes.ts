@@ -12,6 +12,9 @@ export const getRoutes = () => {
     spotifyOAuth2Callback: {
       path: () => '/auth/spotify-oauth2-callback/',
     },
+    spotifyOAuth2InvalidClientCallback: {
+      path: () => '/auth/spotify-oauth2-invalidclient-callback/',
+    },
     listPlaylist: {
       path: () => '/playlists/',
     },

@@ -19,6 +19,7 @@ export const useAuthMain = () => {
   const routes = getRoutes();
   const location = useLocation();
   const redirectUri = `${window.location.origin}${routes.spotifyOAuth2Callback.path()}`;
+  const redirectInvalidClientUri = `${window.location.origin}${routes.spotifyOAuth2InvalidClientCallback.path()}`;
   const codeVerifierStore = getCodeVerifierStore();
   const oauth2StateStore = getOauth2StateStore();
 
@@ -65,5 +66,37 @@ export const useAuthMain = () => {
     redirectUri,
   ]);
 
-  return { onClick, onSnackBarClose, isSnackbarOpen, snackbarMessage } as const;
+  const onDemoClick = useCallback(async () => {
+    const codeVerifier = createCodeVerifier();
+    codeVerifierStore.set(codeVerifier);
+    const codeChallenge = await createCodeChallenge(codeVerifier);
+    const state = createState();
+    oauth2StateStore.set(state);
+
+    const requestParams = {
+      response_type: 'code',
+      client_id: config.spotifyOAuth2ClientId,
+      scope: OAUTH2_SCOPES.join(' '),
+      code_challenge_method: 'S256',
+      code_challenge: codeChallenge,
+      state,
+      redirect_uri: redirectInvalidClientUri,
+    } as const;
+
+    const queryString = new URLSearchParams(requestParams).toString();
+    window.location.href = `${spotifyEndpoints.oauth2Endpoint}?${queryString}`;
+  }, [
+    codeVerifierStore,
+    config.spotifyOAuth2ClientId,
+    oauth2StateStore,
+    redirectInvalidClientUri,
+  ]);
+
+  return {
+    onClick,
+    onDemoClick,
+    onSnackBarClose,
+    isSnackbarOpen,
+    snackbarMessage,
+  } as const;
 };
